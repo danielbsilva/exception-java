@@ -1,19 +1,12 @@
 package exceptions.exercicio01;
 
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class Program {
 
 	public static void main(String[] args) {
-		
-		Scanner scan = new Scanner (System.in);
-		
 		boolean ok = true;
-		
 		JOptionPane.showMessageDialog(null, "Entre com os dados da conta");
-		
 		String number = JOptionPane.showInputDialog("Número: ");
 		int numero = Integer.parseInt(number);
 		String nome = JOptionPane.showInputDialog("Nome: ");
@@ -22,9 +15,7 @@ public class Program {
 		String withdrawLimit = JOptionPane.showInputDialog("Limite de saque: ");
 		double limiteSaque = Double.parseDouble(withdrawLimit);
 		System.out.println();
-		
 		Conta conta = new Conta(numero, nome, saldo, limiteSaque);
-		
 		while (ok) {
 			String amount = JOptionPane.showInputDialog("Entre com o valor para saque: ");
 			double valor = Double.parseDouble(amount);
@@ -36,12 +27,6 @@ public class Program {
 				JOptionPane.showMessageDialog(null, "Erro de saque: "+e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
 				ok = true;
 			}
-			
-		}
-		
-	
-	
-		
+		}	
 	}
-
 }
